@@ -4,6 +4,9 @@
 
 ChatNest is a modern chatting application that allows users to sign up, log in, search for other users, and engage in real-time conversations. With its visually appealing UI and seamless user experience, ChatNest aims to provide a platform for meaningful interactions.
 
+# Live Link
+https://chatnest-pu2a.onrender.com/
+
 ## Features
 
 - **User Authentication:** Users can sign up and log in securely.
@@ -19,6 +22,7 @@ ChatNest is a modern chatting application that allows users to sign up, log in, 
 - **Database:** PostgreSQL (using Prisma ORM)
 - **Real-Time Communication:** Socket.io
 - **Hosting:** Neon.tech for PostgreSQL database
+
 
 ## Installation
 
