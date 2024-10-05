@@ -1,5 +1,6 @@
 import { Request, Response } from "express"
 import prisma from "../db/primsa.js";
+import { getReceiverSocketId, io } from "../socket/socket.js";
 
 export const sendMessage: any =  async (req: Request, res: Response) =>{
     try {
@@ -44,6 +45,11 @@ export const sendMessage: any =  async (req: Request, res: Response) =>{
                 }
             }
             }) 
+        }
+
+        const receiverSocketId = getReceiverSocketId(receiverId);
+        if(receiverSocketId){
+            io.to(receiverSocketId).emit("newMessage", newMessage);
         }
 
         res.status(201).json(newMessage)
@@ -114,3 +120,4 @@ export const getUsersForSidebar: any = async (req: Request, res: Response) => {
         res.status(500).json({error: "Internal Server Error"});
     }
 }
+
